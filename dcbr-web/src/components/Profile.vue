@@ -26,6 +26,7 @@
                   <v-text-field v-model="lastname" :rules="nameRules" label="Last name" required></v-text-field>
                 </v-flex>
               </v-layout>
+              
 
               <!-- Home address section  -->
               <v-layout row mt-5 mx-2>
@@ -100,7 +101,9 @@
         </v-card>
       </v-flex>
     </v-layout>
+    
   </v-container>
+  
 </template>
 <script>
 export default {

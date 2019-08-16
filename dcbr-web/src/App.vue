@@ -7,7 +7,9 @@
         <br />
         <!-- <button @click="$keycloak.logoutFn" v-if="$keycloak.authenticated">Log out</button> -->
       </div>
+     
       <router-view />
+      
     </div>
     <Footer />
   </v-app>
@@ -16,11 +18,14 @@
 <script>
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Todo from "@/components/Todo";
+
 
 export default {
   components: {
     Navbar,
-    Footer
+    Footer,
+    Todo
   }
 };
 </script>
