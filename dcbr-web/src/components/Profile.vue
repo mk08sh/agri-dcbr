@@ -42,8 +42,7 @@
                     required
                   ></v-text-field>
                 </v-flex>
-              </v-layout>
-
+              </v-layout>å
               <!-- Home address section  -->
               <v-layout row mt-5 mx-2>
                 <h4>Home Address</h4>
@@ -82,6 +81,11 @@
                     name="postalCode"
                     required
                   ></v-text-field>
+                </v-flex>
+                <v-flex xs12 md4>
+                  <v-col class="d-flex" cols="12" sm="6">
+                    <v-select :items="items" label="Region"></v-select>
+                  </v-col>
                 </v-flex>
                 <v-flex xs12 md4>
                   <v-checkbox
@@ -134,6 +138,35 @@
 import { mapState } from "vuex";
 export default {
   data: () => ({
+    items: [
+      "Alberni-Clayoquot ",
+      "Bulkley-Nechako ",
+      "Capital ",
+      "Cariboo ",
+      "Central Coast ",
+      "Central Okanagan   ",
+      "Columbia Shuswap  ",
+      "Comox Valley  ",
+      "Cowichan Valley  ",
+      "East Kootenay  ",
+      "Fraser Valley  ",
+      "Fraser-Fort George  ",
+      "Islands Trust  ",
+      "Kitimat-Stikine  ",
+      "Kootenay-Boundary  ",
+      "Metro Vancouver  ",
+      "Mount Waddington  ",
+      "Nanaimo  ",
+      "North Okanagan ",
+      "North Coast ",
+      "Okanagan-Similkameen  ",
+      "Peace River  ",
+      "qathet ",
+      "Squamish-Lillooet  ",
+      "Strathcona  ",
+      "Sunshine Coast  River  ",
+      "Thompson-Nicola "
+    ],
     valid: false,
     mask: "",
     nameRules: [

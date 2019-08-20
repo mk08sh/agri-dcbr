@@ -8,6 +8,8 @@ import Payment from "./views/Payment.vue";
 import Review from "./views/Review.vue";
 import Confirmation from "./views/Confirmation.vue";
 
+
+
 Vue.use(Router);
 
 // export default new Router({
@@ -74,6 +76,17 @@ const router = new Router({
       component: () =>
         // import(/* webpackChunkName: "secret" */ "./views/Secret.vue"),
         import("./views/Confirmation.vue"),
+      meta: {
+        requiresAuth: false
+      }
+    },
+
+    {
+      path: "/dashboard",
+      name: "dashboard",
+      component: () =>
+        // import(/* webpackChunkName: "secret" */ "./views/Secret.vue"),
+        import("./views/OperatorDash.vue"),
       meta: {
         requiresAuth: false
       }

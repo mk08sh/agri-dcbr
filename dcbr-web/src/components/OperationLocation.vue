@@ -44,6 +44,11 @@
                     required
                   ></v-text-field>
                 </v-flex>
+                <v-flex xs12 md4>
+                  <v-col class="d-flex" cols="12" sm="6">
+                    <v-select :items="items" label="Region"></v-select>
+                  </v-col>
+                </v-flex>
               </v-layout>
             </v-container>
           </v-form>
@@ -53,10 +58,39 @@
   </v-container>
 </template>
 <script>
-import {mapState} from "vuex";
+import { mapState } from "vuex";
 export default {
   props: ["number"],
   data: () => ({
+    items: [
+      "Alberni-Clayoquot ",
+      "Bulkley-Nechako ",
+      "Capital ",
+      "Cariboo ",
+      "Central Coast ",
+      "Central Okanagan   ",
+      "Columbia Shuswap  ",
+      "Comox Valley  ",
+      "Cowichan Valley  ",
+      "East Kootenay  ",
+      "Fraser Valley  ",
+      "Fraser-Fort George  ",
+      "Islands Trust  ",
+      "Kitimat-Stikine  ",
+      "Kootenay-Boundary  ",
+      "Metro Vancouver  ",
+      "Mount Waddington  ",
+      "Nanaimo  ",
+      "North Okanagan ",
+      "North Coast ",
+      "Okanagan-Similkameen  ",
+      "Peace River  ",
+      "qathet ",
+      "Squamish-Lillooet  ",
+      "Strathcona  ",
+      "Sunshine Coast  River  ",
+      "Thompson-Nicola "
+    ],
     valid: false,
     nameRules: [
       v => !!v || "Name is required",
@@ -72,73 +106,85 @@ export default {
     streetName: {
       // getter
       get() {
-        return this.$store.getters["operationLocations/locations"][this.$props.number].streetName
+        return this.$store.getters["operationLocations/locations"][
+          this.$props.number
+        ].streetName;
       },
       // setter
       set(value) {
         this.$store.dispatch("operationLocations/updateLocationProperty", {
           index: this.$props.number,
           property: "streetName",
-          value: value,
+          value: value
         });
       }
     },
     aptNumber: {
       // getter
       get() {
-        return this.$store.getters["operationLocations/locations"][this.$props.number].aptNumber
+        return this.$store.getters["operationLocations/locations"][
+          this.$props.number
+        ].aptNumber;
       },
       // setter
       set(value) {
         this.$store.dispatch("operationLocations/updateLocationProperty", {
           index: this.$props.number,
           property: "aptNumber",
-          value: value,
+          value: value
         });
       }
     },
     streetNumber: {
       // getter
       get() {
-        return this.$store.getters["operationLocations/locations"][this.$props.number].streetNumber || ""
+        return (
+          this.$store.getters["operationLocations/locations"][
+            this.$props.number
+          ].streetNumber || ""
+        );
       },
       // setter
       set(value) {
         this.$store.dispatch("operationLocations/updateLocationProperty", {
           index: this.$props.number,
           property: "streetNumber",
-          value: value,
+          value: value
         });
       }
     },
     city: {
       // getter
       get() {
-        return this.$store.getters["operationLocations/locations"][this.$props.number].city
+        return this.$store.getters["operationLocations/locations"][
+          this.$props.number
+        ].city;
       },
       // setter
       set(value) {
         this.$store.dispatch("operationLocations/updateLocationProperty", {
           index: this.$props.number,
           property: "city",
-          value: value,
+          value: value
         });
       }
     },
     postalCode: {
       // getter
       get() {
-        return this.$store.getters["operationLocations/locations"][this.$props.number].postalCode
+        return this.$store.getters["operationLocations/locations"][
+          this.$props.number
+        ].postalCode;
       },
       // setter
       set(value) {
         this.$store.dispatch("operationLocations/updateLocationProperty", {
           index: this.$props.number,
           property: "postalCode",
-          value: value,
+          value: value
         });
       }
-    },
+    }
   }
 };
 </script>
