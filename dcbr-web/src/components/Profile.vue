@@ -84,7 +84,7 @@
                 </v-flex>
                 <v-flex xs12 md4>
                   <v-col class="d-flex" cols="12" sm="6">
-                    <v-select :items="items" label="Region"></v-select>
+                    <v-select :items="items" label="Regional"></v-select>
                   </v-col>
                 </v-flex>
                 <v-flex xs12 md4>

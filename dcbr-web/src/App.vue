@@ -7,6 +7,7 @@
         <br />
         <!-- <button @click="$keycloak.logoutFn" v-if="$keycloak.authenticated">Log out</button> -->
       </div>
+
       <router-view />
     </div>
     <Footer />
