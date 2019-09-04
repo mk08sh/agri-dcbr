@@ -3,7 +3,7 @@
     <v-layout row wrap>
       <v-card-title primary-title>
         <div>
-          <h2>Profile</h2>
+          <h2>Renewal</h2>
         </div>
       </v-card-title>
       <v-flex xs12>
@@ -12,7 +12,7 @@
             <v-container>
               <!--Name Section  -->
               <v-layout mx-2 mt-2>
-                <h4>Name</h4>
+                <h4>Operator's Name</h4>
               </v-layout>
               <v-layout row wrap mx-2>
                 <v-flex xs12 md4>
@@ -46,7 +46,7 @@
 
               <!-- Home address section  -->
               <v-layout row mt-5 mx-2>
-                <h4>Home Address</h4>
+                <h4>Primary Address</h4>
               </v-layout>
               <v-layout row wrap mx-2>
                 <v-flex xs12 md4>
@@ -83,45 +83,19 @@
                     required
                   ></v-text-field>
                 </v-flex>
-                <v-flex xs12 md4>
-                  <v-checkbox
-                    v-model="homeAsOperation"
-                    :label="`My home address is also my operation address`"
-                    name="homeAsOperation"
-                  ></v-checkbox>
-                  <!-- <label for="homeAsOperation">My home address is also my operation address</label> -->
-                  <!-- <input type="checkbox" v-model="homeAsOperation" /> -->
-                </v-flex>
               </v-layout>
 
-              <!-- contact info  -->
-              <v-layout row mt-5 mx-2>
-                <h4>Contact</h4>
+              <v-layout mx-2 mt-2>
+                <h4>Registration Record</h4>
               </v-layout>
-              <v-layout row mx-2>
-                <!-- email -->
-                <v-flex xs12 md4 lg6>
-                  <v-text-field
-                    v-model="email"
-                    :rules="emailRules"
-                    label="E-mail"
-                    name="email"
-                    required
-                  ></v-text-field>
+              <v-layout row wrap mx-2>
+                <v-flex xs12 md4>
+                  <v-text-field :rules="nameRules" label="Reg #" name="firstName" required></v-text-field>
                 </v-flex>
-                <!-- phone number -->
-                <v-flex xs12 md4 lg6>
-                  <v-text-field v-model="phone" :mask="mask" label="Phone" name="phone"></v-text-field>
+
+                <v-flex xs12 md4>
+                  <DatePicker />
                 </v-flex>
-              </v-layout>
-              <v-layout mx-2 mt-5>
-                <v-subheader>What is the best way to contact you?</v-subheader>
-              </v-layout>
-              <v-layout mx-2>
-                <v-radio-group v-model="commType" name="commType" row>
-                  <v-radio label="E-mail" value="Email"></v-radio>
-                  <v-radio label="Mail" value="Mail"></v-radio>
-                </v-radio-group>
               </v-layout>
             </v-container>
           </v-form>
@@ -131,11 +105,16 @@
   </v-container>
 </template>
 <script>
+import DatePicker from "@/components/DatePicker";
 import { mapState } from "vuex";
 export default {
+  components: {
+    DatePicker
+  },
   data: () => ({
     valid: false,
     mask: "",
+
     nameRules: [
       v => !!v || "Name is required",
       v => v.length <= 50 || "Name must be less than 50 characters"
@@ -146,6 +125,7 @@ export default {
     ],
     streetNumberRules: [v => !!v || "Street number is required"]
   }),
+
   computed: {
     ...mapState({
       profile: state => state.profile
@@ -161,6 +141,7 @@ export default {
         this.$store.dispatch("profile/firstName", value);
       }
     },
+
     middleName: {
       // getter
       get() {
