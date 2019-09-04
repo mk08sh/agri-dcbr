@@ -6,6 +6,12 @@ import store from "@/store/store";
 import Vue from "vue";
 
 import App from "./App.vue";
+import Vuetify from 'vuetify';
+
+Vue.use(Vuetify, {
+  iconfont: 'mdi'
+})
+
 
 Vue.config.productionTip = false;
 

@@ -37,6 +37,7 @@
             </div>
           </v-card-title>
           <v-card-title>
+            <Certificate />
             <div>
               <span class="grey--text">Your status as an operator/seller:</span>
               <br />
@@ -55,3 +56,16 @@
     </v-layout>
   </v-app>
 </template>
+
+
+<script>
+import Certificate from "@/components/Certificate";
+export default {
+  components: {
+    Certificate
+  }
+};
+</script>
+
+<style>
+</style>
