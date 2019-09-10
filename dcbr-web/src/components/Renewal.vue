@@ -44,47 +44,6 @@
                 </v-flex>
               </v-layout>
 
-              <!-- Home address section  -->
-              <v-layout row mt-5 mx-2>
-                <h4>Primary Address</h4>
-              </v-layout>
-              <v-layout row wrap mx-2>
-                <v-flex xs12 md4>
-                  <v-text-field
-                    v-model="streetNumber"
-                    :rules="streetNumberRules"
-                    label="Street number"
-                    name="streetNumber"
-                    required
-                  ></v-text-field>
-                </v-flex>
-                <v-flex xs12 md4 lg6>
-                  <v-text-field v-model="aptNumber" label="Apt/Suite" name="aptNumber" required></v-text-field>
-                </v-flex>
-
-                <v-flex xs12 md4>
-                  <v-text-field
-                    v-model="streetName"
-                    :rules="nameRules"
-                    label="Street name"
-                    name="streetName"
-                    required
-                  ></v-text-field>
-                </v-flex>
-                <v-flex xs12 md4>
-                  <v-text-field v-model="city" :rules="nameRules" label="City" name="city" required></v-text-field>
-                </v-flex>
-                <v-flex xs12 md4>
-                  <v-text-field
-                    v-model="postalCode"
-                    :rules="nameRules"
-                    label="Postal Code"
-                    name="postalCode"
-                    required
-                  ></v-text-field>
-                </v-flex>
-              </v-layout>
-
               <v-layout mx-2 mt-2>
                 <h4>Registration Record</h4>
               </v-layout>
